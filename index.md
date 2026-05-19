@@ -6,7 +6,7 @@ description: Privacy policy for the Rivage Android app.
 
 # Privacy Policy
 
-**Effective date:** 2026-05-18
+**Effective date:** 2026-05-19
 **App:** Rivage (Android)
 **Publisher:** Julien Repele
 
@@ -49,18 +49,41 @@ These providers receive the data necessary to answer your request (coordinates, 
 - Nominatim / OpenStreetMap: <https://wiki.osmfoundation.org/wiki/Privacy_Policy>
 - Overpass API: <https://wiki.openstreetmap.org/wiki/Overpass_API>
 
-Rivage does not embed any analytics SDK, crash-reporting SDK, advertising SDK, or any other third-party library that performs background telemetry.
+---
+
+## Quality monitoring (Firebase)
+
+To detect crashes, monitor performance and understand which features are useful, Rivage uses **Firebase by Google** — specifically Firebase Crashlytics, Firebase Analytics and (optionally) Firebase Performance Monitoring.
+
+What Firebase receives:
+
+- **Crash reports** — stack traces, device model, OS version, app version, language, and the time of the crash. Necessary to fix the bug.
+- **Anonymous usage events** — which screens you open, which buttons you tap, session duration. We use this in aggregate to decide which features to keep, improve or retire.
+- **Coarse, IP-derived location** — Google may derive a country-level / region-level location from the IP address of the request. This is **not** the GPS location the app uses to compute tides; the GPS location is never forwarded to Firebase.
+- **Pseudonymous identifier** (Firebase Installation ID, and possibly the Android Advertising ID) so events can be aggregated per device without identifying you personally.
+
+What Firebase does **not** receive:
+
+- Your stored favorites, recent searches, or any content you've entered into the app.
+- The precise GPS coordinates used inside the app.
+- Your email, name, or any other directly identifying information — Rivage does not collect those in the first place.
+
+Firebase's processing is governed by Google's privacy policy: <https://policies.google.com/privacy>. You can reset or opt out of the Android Advertising ID at any time in your device settings (Settings → Privacy → Ads).
+
+---
+
+## Advertising
+
+Rivage may display advertising in future releases to help fund development. If advertising is added, this policy will be updated to specify the advertising network used, what it collects, and how to opt out of personalised ads (typically by resetting the Android Advertising ID in your device settings).
 
 ---
 
 ## What Rivage does **not** do
 
-- No advertising tracking, no ad networks, no ad SDKs.
-- No analytics SDK (no Firebase Analytics, no Crashlytics, no comparable tool).
-- No persistent advertising identifier (Android Advertising ID) is read or transmitted.
 - No account creation, no login, no email collection.
-- No background data collection. The app only contacts external services in response to a foreground user action or a scheduled widget refresh.
-- No data is sold, rented, or shared with third parties for marketing purposes.
+- No background data collection of your location. The app only fetches tides, weather and marine data in response to a foreground user action or a scheduled widget refresh.
+- No data is sold or rented to data brokers.
+- No precise GPS location is sent to anyone other than the third-party APIs above, and only in the moment you request a forecast for that point.
 
 ---
 
